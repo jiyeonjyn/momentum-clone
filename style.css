@@ -1,0 +1,224 @@
+/* font */
+@import url("https://fonts.googleapis.com/css?family=Muli:400,500&display=swap");
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+ul,
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* background */
+body {
+    background-color: #34495e;
+    color: white;
+    user-select: none;
+    font-family: "Muli", sans-serif;
+}
+
+.bg-img {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* center */
+.main {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.js-clock {
+    font: 500 10rem "Muli", sans-serif;
+    letter-spacing: -5px;
+    line-height: 1;
+}
+
+.js-nameForm {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-delay: 0.2s;
+    font: 500 3.2rem "Muli", sans-serif;
+    display: none;
+}
+.js-nameForm > input {
+    all: unset;
+    outline: 0;
+    border-bottom: 3px solid white;
+    width: 500px;
+}
+
+.greeting {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+    animation-delay: 0.2s;
+    font: 400 3.2rem "Muli", sans-serif;
+    display: none;
+}
+
+.showing {
+    display: block;
+}
+
+.js-toDoForm {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+    animation-delay: 0.6s;
+    font: 500 2.2rem "Muli", sans-serif;
+    margin: 20px 0;
+}
+.js-toDoForm > input {
+    all: unset;
+    outline: 0;
+    border-bottom: 3px solid white;
+    width: 500px;
+}
+.js-toDoForm > input::placeholder {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.js-todo,
+.js-done {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+    animation-delay: 0.8s;
+    font: 500 2rem "Muli", sans-serif;
+}
+
+.js-todo > li > button,
+.js-done > li > button {
+    all: unset;
+    opacity: 0;
+    transition: opacity 0.2s;
+    margin: 0 10px;
+}
+.js-todo > li:hover > button,
+.js-done > li:hover > button {
+    opacity: 1;
+}
+
+.js-todo > li > button:first-child,
+.js-done > li > button:first-child {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    position: relative;
+}
+.js-done > li > button:first-child::before {
+    content: "✔";
+    font-size: 1.7rem;
+    position: absolute;
+    top: -70%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.8);
+}
+.js-done > li > span {
+    text-decoration: line-through;
+    text-decoration-color: white;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* top-right */
+.side1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: right;
+    padding: 15px 20px;
+}
+
+@media (max-width: 900px) {
+    .js-clock {
+        font-size: 17vw;
+    }
+    .js-nameForm {
+        font-size: 6vw;
+    }
+    .js-toDoForm {
+        font-size: 4vw;
+    }
+    .js-nameForm > input,
+    .js-toDoForm > input {
+        width: 60%;
+    }
+    .js-toDoForm > input::placeholder {
+        font-size: 3vw;
+    }
+
+    .greeting {
+        font-size: 6vw;
+    }
+
+    .js-todo,
+    .js-done {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .js-clock {
+        font-size: 19vw;
+    }
+    .js-nameForm {
+        font-size: 7vw;
+    }
+    .js-toDoForm {
+        font-size: 5vw;
+    }
+    .js-nameForm > input,
+    .js-toDoForm > input {
+        width: 70%;
+    }
+    .js-toDoForm > input::placeholder {
+        font-size: 1rem;
+    }
+
+    .greeting {
+        font-size: 7vw;
+    }
+
+    .js-todo,
+    .js-done {
+        font-size: 5vw;
+    }
+
+    .js-todo > li > button:first-child,
+    .js-done > li > button:first-child {
+        width: 15px;
+        height: 15px;
+    }
+    .js-done > li > button:first-child::before {
+        font-size: 1.3rem;
+    }
+}
