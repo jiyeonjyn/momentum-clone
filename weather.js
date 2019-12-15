@@ -11,7 +11,10 @@ function getWeather(lat, lon) {
         return response.json()
     }).then(function(json) {
         console.log(json);
-        weather.innerText = `${Math.round(json.main.temp)} ℃`;
+        weather.innerHTML = `
+            <img src="https://openweathermap.org/img/wn/${json.weather[0].icon}.png" alt="">
+            <span class=".temp">${Math.round(json.main.temp)}</span>℃
+        `;
         place.innerText = json.name;
     })
 }
