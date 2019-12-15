@@ -157,6 +157,9 @@ body {
     text-align: right;
     padding: 15px 20px;
 }
+.js-weather {
+    font-size: 1.2rem;
+}
 
 @media (max-width: 900px) {
     .js-clock {

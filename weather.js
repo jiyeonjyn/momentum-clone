@@ -11,31 +11,26 @@ function getWeather(lat, lon) {
         return response.json()
     }).then(function(json) {
         console.log(json);
-        weather.innerText = `${Math.round(json.main.temp)} ºC`;
+        weather.innerText = `${Math.round(json.main.temp)} ℃`;
         place.innerText = json.name;
     })
 }
 
-function saveCoords(coordsObj) {
-    localStorage.setItem("coords", JSON.stringify(coordsObj));
+function askForCoords() {
+    navigator.geolocation.getCurrentPosition(handleGeoSuccess, function handleGeoError() {
+        console.log("can't access geo location");
+    });
 }
 
-function handleGeoSucces(position) {
+function handleGeoSuccess(position) {
     const longitude =  position.coords.longitude;
     const latitude = position.coords.latitude;
     const coordsObj = {
         longitude,
         latitude
     }
-    saveCoords(coordsObj);
-}
-
-function handleGeoError() {
-    console.log("can't access geo location");
-}
-
-function askForCoords() {
-    navigator.geolocation.getCurrentPosition(handleGeoSucces, handleGeoError);
+    localStorage.setItem("coords", JSON.stringify(coordsObj));
+    loadCoords();
 }
 
 function loadCoords() {
