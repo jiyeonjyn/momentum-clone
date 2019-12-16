@@ -166,7 +166,7 @@ body {
 }
 .js-weather > span {
     font: 500 1.5rem "Muli", sans-serif;
-    margin-right: 3px;
+    margin: 0 3px;
 }
 
 .js-location {
@@ -200,9 +200,9 @@ body {
         font-size: 4vw;
     }
 
-    .js-weather > img {
+    /* .js-weather > img {
         width: 40px;
-    }
+    } */
 }
 
 @media (max-width: 500px) {
@@ -248,9 +248,9 @@ body {
     .js-weather {
         font-size: 0.9rem;
     }
-    .js-weather > img {
+    /* .js-weather > img {
         width: 35px;
-    }
+    } */
     .js-weather > span {
         font-size: 1.2rem;
     }
