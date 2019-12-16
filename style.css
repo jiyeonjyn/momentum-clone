@@ -167,6 +167,7 @@ body {
 .js-weather > span {
     font: 500 1.5rem "Muli", sans-serif;
     margin: 0 3px;
+    letter-spacing: -1px;
 }
 
 .js-location {
