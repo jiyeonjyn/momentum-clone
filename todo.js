@@ -54,7 +54,7 @@ function paintFinished(taskObj) {
 }
 
 function checkFull() {
-    if (pendingArr.length + finishedArr.length === 3) {
+    if (pendingArr.length + finishedArr.length >= 3) {
         toDoInput.disabled = true;
         toDoInput.placeholder = "The list is full.";
     }

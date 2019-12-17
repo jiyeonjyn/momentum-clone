@@ -2,9 +2,8 @@ const API_KEY = "be6fd2d4d514775334973844b24fc0b2";
 const weather = document.querySelector(".js-weather"),
     place = document.querySelector(".js-location");
 
-function insertIcon(json) {
+function insertIcon(iconCode) {
     const icon = document.createElement("span");
-    const iconCode = json.weather[0].icon;
     switch(iconCode) {
         case "01d":
             icon.innerHTML=`<i class="fas fa-sun"></i>`;
@@ -56,7 +55,7 @@ function getWeather(lat, lon) {
             //<img src="https://openweathermap.org/img/wn/${json.weather[0].icon}.png" alt="">
             `<span class=".temp">${Math.round(json.main.temp)}</span>℃`;
         place.innerText = json.name;
-        insertIcon(json);
+        insertIcon(json.weather[0].icon);
     });
 }
 
