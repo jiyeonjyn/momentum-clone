@@ -53,7 +53,7 @@ function getWeather(lat, lon) {
         console.log(json);
         weather.innerHTML = 
             //<img src="https://openweathermap.org/img/wn/${json.weather[0].icon}.png" alt="">
-            `<span class=".temp">${Math.round(json.main.temp)}</span>℃`;
+            `<span>${Math.round(json.main.temp)}</span>℃`;
         place.innerText = json.name;
         insertIcon(json.weather[0].icon);
     });
