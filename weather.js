@@ -66,6 +66,7 @@ function askForCoords() {
 }
 
 function handleGeoSuccess(position) {
+    //console.log(position);
     const longitude =  position.coords.longitude;
     const latitude = position.coords.latitude;
     const coordsObj = {
@@ -73,7 +74,7 @@ function handleGeoSuccess(position) {
         latitude
     }
     localStorage.setItem("coords", JSON.stringify(coordsObj));
-    loadCoords();
+    getWeather(latitude, longitude);
 }
 
 function loadCoords() {
