@@ -10,6 +10,7 @@ function paintImage(imgNum) {
 
 function genRandom() {
     const number = Math.ceil(Math.random() * IMG_NUMBER);
+    if (number === 0) return 1;
     return number;
 }
 
