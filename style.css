@@ -82,16 +82,13 @@ body {
     display: none;
 }
 
-.showing {
-    display: block;
-}
-
 .js-toDoForm {
     opacity: 0;
     animation: fadeIn 0.5s ease-in forwards;
     animation-delay: 0.6s;
     font: 500 2.2rem "Muli", sans-serif;
     margin: 20px 0;
+    display: none;
 }
 .js-toDoForm > input {
     all: unset;
@@ -110,6 +107,11 @@ body {
     animation: fadeIn 0.5s ease-in forwards;
     animation-delay: 1s;
     font: 500 2rem "Muli", sans-serif;
+    display: none;
+}
+
+.showing {
+    display: block;
 }
 
 .js-todo > li > button,

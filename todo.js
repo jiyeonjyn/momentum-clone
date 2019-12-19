@@ -125,7 +125,6 @@ function handleSubmit(e) {
     saveState();
 }
 
-
 function init() {
     loadTask();
     toDoForm.addEventListener("submit", handleSubmit);

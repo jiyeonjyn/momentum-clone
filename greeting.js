@@ -3,6 +3,12 @@ const nameForm = document.querySelector(".js-nameForm"),
     greeting = document.querySelector(".greeting");
 
 
+function showToDo() {
+    document.querySelector(".js-toDoForm").classList.add("showing");
+    document.querySelector(".js-todo").classList.add("showing");
+    document.querySelector(".js-done").classList.add("showing");
+}
+
 function greet(name) {
     nameForm.classList.remove("showing");
     greeting.classList.add("showing");
@@ -14,10 +20,10 @@ function greet(name) {
     } else {
         greeting.innerText = `Good evening, ${name}.`;
     }
+    showToDo();
 }
 
 function askForName() {
-    greeting.classList.remove("showing");
     nameForm.classList.add("showing");
     nameForm.addEventListener("submit",(e) => {
         e.preventDefault();
