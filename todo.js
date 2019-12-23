@@ -119,6 +119,7 @@ function getTaskObject(text) {
 
 function handleSubmit(e) {
     e.preventDefault();
+    if (toDoInput.value === "") return;
     const taskObj = getTaskObject(toDoInput.value);
     toDoInput.value = "";
     paintPending(taskObj); //태그생성, 객체저장
